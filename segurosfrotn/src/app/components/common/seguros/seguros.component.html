@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h3 class="text-primary text-center">Nuestra coberturas</h3>
+  <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mt-3" *ngFor = "let seguro of seguros">
+          <div class="card" style="width: 100%;">
+              <!-- <img src="{{seguro.imagen}}" class="card-img-top" alt="Imagen" > -->
+              <div class="card-body">
+                <h5 class="card-title">{{seguro.nombre_s}}</h5>
+                <p class="card-text">{{seguro.titulo}}</p>
+                <div>
+                    
+                  <small>{{seguro.descripcion}}</small>
+                  
+                </div>
+                <!-- /heroe/1 -->
+                <!-- /heroe/id -->
+                <!-- href -> No se usa -> vuelve a cargar toda la página -->
+               <a routerLink="/seguros/seguros-single/{{seguro.id_s}}" class="btn btn-primary btn-block mt-3">Ver más</a> 
+              </div>
+            </div>
+      </div>
+  </div>
+</div>

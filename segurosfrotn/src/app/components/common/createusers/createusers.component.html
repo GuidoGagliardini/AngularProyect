@@ -1,0 +1,41 @@
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-12">
+            <h2>Registro de Usuario</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-12">
+            <form [formGroup]="formCreate" *ngIf="isLoaded" (ngSubmit)="validarPass()">
+                <div class="form-group">
+                    <label for="usuario">Usuario <span class="text-danger">*</span></label>
+                    <input type="text" formControlName="usuario" id="usuario" class="form-control">
+                    <span class="text-danger" *ngIf="formCreate.get('usuario').status != 'VALID' && formCreate.get('usuario').touched">Field required</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="text-danger">*</span></label>
+                    <input type="text" formControlName="email" id="email" class="form-control">
+                    <div *ngIf="formCreate.get('email').errors && formCreate.get ('email').dirty">
+                        <span class="text-center text-danger" *ngIf="formCreate.get('email').status != 'VALID' && formCreate.get('email').hasError('email')">Email erroneo</span>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password <span class="text-danger">*</span></label>
+                    <input type="password" formControlName="password" id="password" class="form-control">
+                    <span class="text-danger" *ngIf="formCreate.get('password').status != 'VALID' && formCreate.get('password').touched">Field required</span>
+                </div>
+                <div class="form-group">
+                    <label for="repeatPassword">Repeat password <span class="text-danger">*</span></label>
+                    <input type="password" formControlName="repeatPassword" id="repeatPassword" class="form-control">
+                    <span class="text-danger" *ngIf="formCreate.get('repeatPassword').status != 'VALID' && formCreate.get('repeatPassword').touched">Field required</span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" [disabled]="formCreate.invalid"  class="btn btn-dark btn-block">Enviar</button>
+                    <p class="text-danger"> {{message}}</p>
+                </div>
+                <!-- <span class="text-danger" *ngIf="message">{{message}}</span> -->
+            </form>
+        </div>
+        
+    </div>
+</div>

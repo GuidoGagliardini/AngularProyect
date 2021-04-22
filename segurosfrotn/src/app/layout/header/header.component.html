@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand js-scroll-trigger" routerLink = '/home'>Rodriguez Seguros</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mx-0 mx-lg-1" *ngFor="let r of routes">
+        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" [routerLink]="r.link">{{r.detail}}</a>
+      </li>
+    </ul>
+   
+  </div>
+</nav>
+
+

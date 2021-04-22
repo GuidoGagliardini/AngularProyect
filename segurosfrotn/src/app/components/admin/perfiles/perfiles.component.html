@@ -1,0 +1,122 @@
+<h1 class="mt-4 text-center bg-primary">USUARIOS</h1>
+
+<div class="containter-fluid" >
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <table class="table table-dark  table-striped table-bordered table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Numero</th>
+                <th scope="col">Usuario </th>
+                <th scope="col">Password </th>
+                <th scope="col">Email </th>
+                <th scope="col">Permiso</th>
+                
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{user.id_u}}</td>   
+                <td>{{user.usuario_u}}</td>
+                <td>{{user.password_u}}</td>
+                <td>{{user.email_u}}</td>
+                <td>{{user.permisos_u}}</td>
+                
+               
+                <td>
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         ACCIONES🛠
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item"  style="cursor: pointer;" (click)="editar()"  >Editar</a>
+                       
+                          <a class="dropdown-item"  style="cursor: pointer;"  (click)="delete()">Eliminar</a>
+                          
+                        </div>
+                      </div>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+      <!-- ACCIONES -->
+        <!-- EDITAR -->
+    <div class="row" *ngIf="editarToggled" >
+      <div class="col-md-12 col-sm-12">
+      <form [formGroup]="FormEdit" >
+      <table class="table table-dark  table-bordered table-sm" >
+        <thead>
+            <tr>
+            <th>ID</th>
+            </tr>
+        </thead>
+          <tbody>
+            <tr *ngIf="let user of users">
+                <td>
+                  {{user.id_u}}
+                </td>
+               <!-- no me andan los valeu="{{}}" -->
+                <td>
+                  <input placeholder="Nuevo usuario" type="text" class="form-control" formControlName="usuario">
+                </td>
+                <td>
+                  <input placeholder="Nuevo password" type="password" class="form-control" formControlName="password">
+                </td>
+                <td>
+                  <input placeholder="Nuevo Email" type="text" class="form-control" formControlName="email">
+                  
+                </td>
+                <td>
+                  <input placeholder="PermisoActual " type="text" class="form-control" formControlName="permisos">
+                </td>
+                <td>
+                    <button type="button"class="btn btn-block text-success" (click)="editUsers()"><i class="fas fa-check-circle"></i></button>
+                    <button type="reset"class="btn btn-block text-danger"><i class="fas fa-backspace"></i></button>
+                </td> 
+              </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    </div>
+      <!--BORRAR-->
+    <div class="row" *ngIf="deleteToggled" >
+      <div class="col-md-12 col-sm-12">
+      <table class="table table-dark  table-bordered table-sm" >
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Permiso</th>
+            
+            </tr>
+        </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+                <td>
+                  {{user.id_u}}
+                </td>
+               <!-- no me andan los valeu="{{}}" -->
+                <td>
+                  {{user.usuario_u}}
+                </td>
+                <td>
+                  {{user.permisos_u}}
+                </td>
+                  <td>
+                    <button type=""class="btn btn-block text-danger" (click)="deleteusers(user.id_u)"><i class="fas fa-trash-alt"></i>Eliminar🛑</button>
+                </td> 
+              </tr>
+          </tbody>
+        </table>
+      </div>
+     
+    </div>
+
+  

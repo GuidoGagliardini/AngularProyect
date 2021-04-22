@@ -1,0 +1,17 @@
+Falta por terminar:
+    -En formulario de siniestro agregar Array de imagen con preview de imagen con array 
+    -Auth0 : que el usuario que se crea se relacione con una tabla de mi base de datos 
+    -Subirlo a AWS
+    -Agregarle y practicar mas diseño en cada componente 
+    -Verify Code en registro de usuario
+    -Mas completo el middleware
+    -Agregar Sha1
+    -Componente panel admin{
+        - Mejorar estetica en general, en especial en las tablas
+        -Siniestros= No se muestra el single/falta el Read de imagen y mostrarla!
+        -configAdmin =  Que pueda modificar las imagenes del home, cambiar confiugraciones de mail
+        -perfiles: que ande el UPDATE!!!
+        -cotizaciones: encontrar una manera practica y mas linda de manejar la tabla
+        
+
+    }

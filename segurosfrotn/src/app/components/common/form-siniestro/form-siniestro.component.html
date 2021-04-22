@@ -1,0 +1,211 @@
+<div class="container mt-5">
+      <h3 class="text-primary text-center">Formulario de Siniestro</h3>
+        <form [formGroup]="form" >
+           
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h4 class="text-center mt-50">DATOS DEL ASEGURADO</h4>
+
+                <div class="form-group">
+                  <label for="fecha_sin">Fecha del siniestro</label> <!--Fecha-->
+                <input
+                 formControlName="fecha_sin"
+                 type="date" 
+                 placeholder="Fecha del Siniestro"
+                 class="form-control">
+                 <span class="text-center text-danger" *ngIf="form.get('fecha_sin').status != 'VALID' && form.get('fecha_sin').touched">Campo obligatorio</span>
+                </div>   
+    
+                <div class="form-group"> 
+                  <label for="hora_sin">Hora</label> <!--Hora-->
+                <input
+                 formControlName="hora_sin"
+                 type="text"
+                 placeholder="Hora del siniestro" 
+                 class="form-control">
+                 <span class="text-center text-danger" *ngIf="form.get('hora_sin').status != 'VALID' && form.get('hora_sin').touched">Campo obligatorio</span>
+                </div>
+    
+                <div class="form-group">
+                  <label for="calle_sin">Calle</label><!--Calle--> 
+                <input
+                 type="text"
+                 formControlName="calle_sin" 
+                 placeholder="Calle" 
+                 class="form-control">
+                 <span class="text-center text-danger" *ngIf="form.get('calle_sin').status != 'VALID' && form.get('calle_sin').touched">Campo obligatorio</span>
+    
+                </div>
+    
+                <div class="form-group">
+                  <label for="entrecalle_sin">Entre Calle</label> <!--EntreCalle-->
+                <input 
+                formControlName="entrecalle_sin"
+                type="text"
+                placeholder="Entre calle"
+                class="form-control">
+                <span class="text-center text-danger" *ngIf="form.get('entrecalle_sin').status != 'VALID' && form.get('entrecalle_sin').touched">Campo obligatorio</span>
+                </div>
+                
+                 <div class="form-group">
+                   <label for="entrecalle2_sin">Entre Calle 2</label> <!--EntreCalle2-->
+                <input 
+                  formControlName="entrecalle2_sin"
+                  placeholder="Entre calle 2"
+                  class="form-control"
+                  type="text">
+                  <span class="text-center text-danger" *ngIf="form.get('entrecalle2_sin').status != 'VALID' && form.get('entrecalle2_sin').touched">Campo obligatorio</span>
+                </div>
+             
+                <div class="form-group"> 
+                <label for= "localidad_sin">Localidad</label><!--Localidad-->
+                <input 
+                formControlName="localidad_sin" 
+                class="form-control"
+                placeholder="Localidad"
+                type="text"> 
+                <span class="text-center text-danger" *ngIf="form.get('localidad_sin').status != 'VALID' && form.get('localidad_sin').touched">Campo obligatorio</span>
+                   
+                </div>
+    
+                <div class="form-group">
+                  <label for="formaocurrencia_sin">Describa el siniestro</label><!--formaocurrencia-->
+                       <textarea
+                       formControlName="formaocurrencia_sin" 
+                       class="form-control"
+                       placeholder="Describa el siniestro..." 
+                       type="text"></textarea>
+                       <span class="text-center text-danger" *ngIf="form.get('formaocurrencia_sin').status != 'VALID' && form.get('formaocurrencia_sin').touched">Campo obligatorio</span>
+                        
+                    </div>
+                    
+                      <div class="form-group">
+                         <label for= "danos_sin">Describa los daños de SU vehiculo</label><!--danIos-->
+                        <textarea
+                         formControlName="danos_sin"
+                         class="form-control"
+                         placeholder="Describa los daños de SU vehiculo"
+                         type="textarea" ></textarea>
+                         <span class="text-center text-danger" *ngIf="form.get('danos_sin').status != 'VALID' && form.get('danos_sin').touched">Campo obligatorio</span>
+                         </div>
+                      
+                <div class="form-group">
+                  <label for = "asegurado_sin">Nombre del Asegurado</label><!--Asegurado nombre-->
+                    <input
+                     formControlName="asegurado_sin"
+                     type="text"
+                     class="form-control mt-3"
+                     placeholder="Asegurado">
+                     <span class="text-center text-danger" *ngIf="form.get('asegurado_sin').status != 'VALID' && form.get('asegurado_sin').touched">Campo obligatorio</span>
+                </div>
+                <div class="form-group">
+                        <label for="patente_sin">Patente del asegurado</label><!--Patente-->
+                        <input 
+                        formControlName="patente_sin"
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Patente">
+                        <span class="text-center text-danger" *ngIf="form.get('patente_sin').status != 'VALID' && form.get('patente_sin').touched">Campo obligatorio</span>
+                      </div>
+              </div>
+            
+
+                  
+                  
+                  <!--Fin formulario del asegurado-->
+
+
+
+                  <!--DATOS DEL TERCERO -->
+                  <div class="col-md-6 col-sm-12">
+
+                  <h4 class="text-center mt-50">DATOS DEL TERCERO</h4>
+                     <div class="form-group">
+                       <label for = "nombretercero_sin">Nombre del Tercero</label> <!--NombreTercero-->
+                    
+                    <input
+                     formControlName="nombretercero_sin"
+                     type="text"
+                     class="form-control"
+                     placeholder="Nombre">
+                     <span class="text-center text-danger" *ngIf="form.get('nombretercero_sin').status != 'VALID' && form.get('nombretercero_sin').touched">Campo obligatorio</span>
+                    </div>
+
+
+                     <div class="form-group">
+                       <label for = "dnitercero_sin">DNI del tercero</label><!--Dni Tercero-->
+                    <input
+                     formControlName="dnitercero_sin"
+                     type="text"
+                     class="form-control" 
+                     placeholder="D N I">
+                     <span class="text-center text-danger" *ngIf="form.get('dnitercero_sin').status != 'VALID' && form.get('dnitercero_sin').touched">Campo obligatorio</span>
+                    </div>
+
+                     <div class="form-group">
+                       <label for = "autotercero_sin">Auto - modelo del tercero</label><!--Auto modelo Tercero-->
+                    <input
+                     formControlName="autotercero_sin"
+                     type="text"
+                     class="form-control"
+                     placeholder="Vehiculo-modelo">
+                     <span class="text-center text-danger" *ngIf="form.get('autotercero_sin').status != 'VALID' && form.get('autotercero_sin').touched">Campo obligatorio</span>
+
+                    </div>
+                     <div class="form-group">
+                       <label for="segurotercero_sin">Seguro del tercero</label><!--Seguro Tercero-->
+                    
+                    <input
+                    formControlName="segurotercero_sin"
+                    type="text"
+                    class="form-control"
+                    placeholder="Compañia">
+                    <span class="text-center text-danger" *ngIf="form.get('segurotercero_sin').status != 'VALID' && form.get('segurotercero_sin').touched">Campo obligatorio</span>
+                    </div>
+
+                    <div class="form-group"> 
+                      <label for = "danotercero_sin">Daños del vehiculo </label><!--DanIos del vehiculo tercero-->
+                    <textarea
+                       formControlName="danotercero_sin"
+                       class="form-control"
+                       placeholder="Describa los daños del tercero"
+                       type = "textarea"></textarea>
+                       <span class="text-center text-danger" *ngIf="form.get('danotercero_sin').status != 'VALID' && form.get('danotercero_sin').touched">Campo obligatorio</span>
+                     </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row justify-content-center mt-2">
+                     <h4>CARGA DE IMAGENES</h4>
+                     
+                     <input
+                      type="file"
+                      placeholder="imagen_sin"
+                      class="form-control" 
+                      formControlName="imagen_sin"
+                      (change)="onFileSelected($event)">
+                      <div class="col-3" *ngIf="previewUrl">
+                        <img [src]="previewUrl" style="width: 250px; height: auto;" />
+                      </div>
+                    </div>
+
+
+                    <div class="row justify-content-center mt-2">
+                    <!--Botones-->
+                    <button type="button" 
+                     class="btn btn-primary btn-block w-50" 
+                      [disabled]="form.invalid"
+                      (click)="upload()"
+                      > Enviar</button>
+                    </div>
+                      <div class="row justify-content-center mt-2">
+                    <button type= "reset" class="btn btn-primary btn-block w-50">Limpiar formulario</button>
+                  </div>
+                 
+
+                
+
+            </form>
+
+</div>

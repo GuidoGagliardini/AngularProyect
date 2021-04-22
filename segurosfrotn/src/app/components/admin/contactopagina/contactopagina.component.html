@@ -1,0 +1,41 @@
+<h1 class="mt-4 text-center bg-primary">CONSULTAS DE LA PAGINA</h1>
+ <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-sm-12">
+    
+    <table class="table table-dark  table-striped table-bordered table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Numero</th>
+          <th scope="col">Nombre </th>
+          <th scope="col">Email </th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Consulta</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let consul of consultas">
+          <th>{{consul.id_contacto}}</th>   
+          <td>{{consul.nombre_contacto}}</td>
+          <td>{{consul.email_contacto}}</td>
+          <td>{{consul.telefono_contacto}}</td>
+          <td>{{consul.consulta_contacto}}</td>
+          <td>
+            <button class="btn btn-block btn-danger text-white" (click)="borrarConsulta(consul.id_contacto)">
+              <i class="far fa-trash-alt"></i>
+            ELIMINAR
+            </button>
+          </td>
+        </tr>
+       
+       
+        
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+  

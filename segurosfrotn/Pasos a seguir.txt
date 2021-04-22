@@ -1,0 +1,33 @@
+Pasos a seguir{
+    common = {
+        en general : ver como funciona routerLinkavtive
+        contacto :["crear form de angular, mandar mail y cartel de confirmacion " , 
+                    estado : solo front],
+        cotiza : [#hecho--> solo front y mail desde postman],
+
+        form-siniestro : ["crear todo el form de angular, enviar formulario de siniestro con prew con array de fotos y
+                          ese siniestro cargarlo al panel admin" ,
+                   estado : solo front ],
+        seguros : ["#hecho---> cargar imagenes (de la base de datos o no )a las cards con su seguro correspondiente 
+                    #arreglar--->hacer el single de cada seguro
+                                  con detalles de cada seguro y una opcion para mandar una consulta o mail, 
+                   estado : ya cargue el front segurosall ]              
+    }
+
+
+    home  = aplicar mas estetica y que funcionen los botones de facebook e instagram (del footer)
+    login = que llegue el jwt al frton que lo almancene en sessionStorage 
+    admin/paneladmin = footer personalizado - logout - guaridians -todo el panel admin -
+                        recovery - si se puede y conviene auth0 
+    En general = 
+		{[que todas las paginas se verifique sessionStorage con jwt],
+     [que todos los forms no se pueda presionar el boton de enviar si no esta el form hecho],
+      [agregar s3 ]
+     [subir todo a AWS y a bitbucket y o git ]
+      }
+
+}
+
+30/09/2020
+Agregar whatsap
+agregar detalles en los botones al terminar las funciones

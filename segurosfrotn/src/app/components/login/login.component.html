@@ -1,0 +1,25 @@
+<div id="Contenedor">
+
+<div class="ContentForm">
+    <form [formGroup]="form" (ngSubmit)="auth()">
+        
+            <div class="input-group input-group-lg">
+                
+             <span class="input-group-addon" id="sizing-addon1"></span>
+             <input  
+                type="text" class="form-control mt-2" placeholder="Usuario" formControlName="usuario" id="usuario">
+           </div>
+           <br>
+           <div class="input-group input-group-lg">
+             <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+             <input 
+                 class="form-control mt-2" type="password" placeholder="Contraseña" formControlName="password" id="password">
+           </div>
+           <br>
+           <button class="btn btn-lg btn-primary btn-block btn-signin" id="IngresoLog" type="submit">Entrar</button>
+           <button class="btn btn-lg btn-primary btn-block btn-signin" id="IngresoLog" type="button" (click)="auth0.login()" *ngIf="!auth0.loggedIn">SOCIAL MEDIA</button>
+           <div class="opcioncontra"><a routerLink="/recovery">Olvidaste tu contraseña?</a></div>
+           <div class="opcioncontra"><a routerLink="/createusers">Regisrtrate!</a></div>
+        </form>
+    </div>	
+    </div>

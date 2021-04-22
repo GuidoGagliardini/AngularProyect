@@ -1,0 +1,65 @@
+      <!-- Formulario CONTACTO-consulta -->
+      <div class="containter mt-5">
+      <h3 class="text-primary text-center">Envie su consulta</h3>
+      <div class="row">
+      <div class="col-lg-6 mx-auto">
+         
+          <form [formGroup]="form" (ngSubmit)="contacto()" >
+
+            <div class="form-group">
+              <div class="form-group"> <!--Nombre -->
+                <label for="nombre_contacto">Nombre</label>
+                <input 
+                class="form-control"
+                formControlName="nombre_contacto" 
+                 type="text" 
+                 placeholder="Nombre"/>
+                 <span class="text-center text-danger" *ngIf="form.get('nombre_contacto').status != 'VALID' && form.get('nombre_contacto').touched">Campo obligatorio</span>
+              </div>
+            </div>
+            
+            <div class="control-group"> <!--Email -->
+              <div class="form-group">
+                <label for="email_contacto">Email</label>
+                <input class="form-control"
+                 formControlName="email_contacto"
+                  type="email"
+                   placeholder="Email">
+                <div *ngIf="form.get('email_contacto').errors && form.get ('email_contacto').dirty">
+                <span class="text-center text-danger" *ngIf="form.get('email_contacto').status != 'VALID' && form.get('email_contacto').hasError('email')">Email erroneo</span>
+                </div>
+                <span class="text-center text-danger" *ngIf="form.get('email_contacto').status != 'VALID' && form.get('email_contacto').touched">Campo obligatorio</span>
+              </div>
+            </div>
+
+            <div class="control-group"><!--Celular -->
+              <div class="form-group">
+                <label for="telefono_contacto">Celular</label>
+                <input class="form-control"
+                 formControlName="telefono_contacto"
+                 type="text"
+                 placeholder="Telfono">
+                <span class="text-center text-danger" *ngIf="form.get('telefono_contacto').status != 'VALID' && form.get('telefono_contacto').touched">Campo obligatorio</span>
+              </div>
+            </div>
+
+            <div class="control-group"><!--Consulta -->
+              <div class="form-group">
+                <label for="consulta_contacto">Consulta</label>
+                <textarea class="form-control"
+                 formControlName="consulta_contacto"
+                 rows="5"
+                 placeholder="Consulta..."></textarea>
+                <span class="text-center text-danger" *ngIf="form.get('consulta_contacto').status != 'VALID' && form.get('consulta_contacto').touched">Campo obligatorio</span>
+              </div>
+            </div>
+            <br>
+   
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-xl" [disabled]="form.invalid">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      <!-- solucionar tema del email que cargue mail incorrecto cuando el mail es incorrecto y no siempre  -->

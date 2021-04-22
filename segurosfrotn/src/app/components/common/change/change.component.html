@@ -1,0 +1,27 @@
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-12">
+            <h2>Change your password</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-12">
+            <form [formGroup]="formChanger" (ngSubmit)="changerPassword()" *ngIf="isLoaded">
+                <div class="form-group">
+                    <label for="password">Password <span class="text-danger">*</span></label>
+                    <input type="password" formControlName="password" id="password" class="form-control">
+                    <span class="text-danger" *ngIf="formChanger.get('password').status != 'VALID' && formChanger.get('password').touched">Field required</span>
+                </div>
+                <div class="form-group">
+                    <label for="repeatPassword">Repeat password <span class="text-danger">*</span></label>
+                    <input type="password" formControlName="repeatPassword" id="repeatPassword" class="form-control">
+                    <span class="text-danger" *ngIf="formChanger.get('repeatPassword').status != 'VALID' && formChanger.get('repeatPassword').touched">Field required</span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" [disabled]="formChanger.invalid" class="btn btn-dark btn-block">Change</button>
+                </div>
+                <span class="text-danger" *ngIf="message">{{message}}</span>
+            </form>
+        </div>
+    </div>
+</div>

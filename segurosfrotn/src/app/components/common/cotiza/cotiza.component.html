@@ -1,0 +1,148 @@
+<h3 class="text-primary text-center">Cotizacion</h3>
+<div class="container mt-5">
+    <form [formGroup]="form" (ngSubmit)="cotiza()">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+              
+                <h3 class="text-info">Datos Personales : </h3>
+                
+                <div class="form-group">
+                    <!--Nombre-->
+                    <label for="nombre_cot">Nombre</label>
+                    <input type="text" id="nombre_cot" formControlName="nombre_cot" class="form-control"
+                        placeholder="Nombre" />
+                    <span class="text-center text-danger"
+                        *ngIf="form.get('nombre_cot').status != 'VALID' && form.get('nombre_cot').touched">Campo
+                        obligatorio</span>
+                </div>
+                <div class="form-group">
+                    <!--DNI-->
+                    <label for="dni_cot">DNI</label>
+                    <input id="dni_cot" type="text" formControlName="dni_cot" class="form-control" placeholder="DNI" />
+                    <span class="text-center text-danger"
+                        *ngIf="form.get('dni_cot').status != 'VALID' && form.get('dni_cot').touched">Campo
+                        obligatorio</span>
+                </div>
+                <div class="form-group">
+                    <!--FechaNac-->
+                    <label for="fechaNac_cot">Fecha de Nacimiento</label>
+                    <input id="fechaNac_cot" type="date" formControlName="fechaNac_cot" class="form-control"
+                        placeholder="DNI" />
+                    <span class="text-center text-danger"
+                        *ngIf="form.get('fechaNac_cot').status != 'VALID' && form.get('fechaNac_cot').touched">Campo
+                        obligatorio</span>
+                </div>
+                <div class="form-group">
+                    <!--Localidad-->
+                    <label for="localidad_Cot">Localidad</label>
+                    <input id="localidad_cot" type="text" formControlName="localidad_cot" class="form-control"
+                        placeholder="Localidad" />
+                    <span class="text-center text-danger"
+                        *ngIf="form.get('localidad_cot').status != 'VALID' && form.get('localidad_cot').touched">Campo
+                        obligatorio</span>
+                </div>
+
+<!------------------------------------------------------------------------------------------>
+
+
+
+
+               
+
+                            
+                         
+                        <!--aca tengo que intentar separar las columnas-->
+
+
+
+
+
+                        <!-- <div class="form-group">
+                          <label for="pago_cot">Forma de pago</label>
+                          <select class="form-control" 
+                formControlName = "pago_cot"
+                  id="pago_cot">
+                <option selected disabled>Elegir forma de pago</option>
+                  <option value="uno">Efectivo</option>
+                  <option value="dos">Tarjeta de credito</option>
+                  <option value="tres">Tarjeta de debito</option>
+                </select> -->
+
+
+
+             
+              </div>
+              
+              
+              <div class="col-md-6 col-sm-12">
+                <h3 class="text-info">Datos vehiculo : </h3>
+                <div class="form-group">
+                    <!--MARCA-->
+                    <label for="marca_cot">Marca - Modelo</label>
+                    <input id="marca_cot" type="text" formControlName="marca_cot" class="form-control"
+                        placeholder="Ej: Renault - clio" />
+                    <span class="text-center text-danger"
+                        *ngIf="form.get('marca_cot').status != 'VALID' && form.get('marca_cot').touched">Campo
+                        obligatorio</span>
+                </div>
+                
+                  <div class="form-group">
+                    <!--Año-->
+                    <label for="ano_cot">Año</label>
+                    <input id="ano_cot" type="text" formControlName="ano_cot" class="form-control"
+                    placeholder="Año del vehiculo" />
+                    <span class="text-center text-danger"
+                    *ngIf="form.get('ano_cot').status != 'VALID' && form.get('ano_cot').touched">Campo
+                    obligatorio</span>
+                  </div>
+                  <div class="form-group">
+                    <!--Puertas-->
+                    <label for="puertas_cot">Cantidad de puertas</label>
+                    <input id="puertas_cot" type="text" formControlName="puertas_cot" class="form-control"
+                        placeholder="Ej: 5 o 3" />
+                    <span class="text-center text-danger"
+                        *ngIf="form.get('puertas_cot').status != 'VALID' && form.get('puertas_cot').touched">Campo
+                        obligatorio</span>
+                </div>
+                
+                
+                  <div class="form-group">
+                    <!--Forma de pago-->
+                    <label for="pago_cot">Forma de pago</label>
+                    <input id="pago_cot" type="text" formControlName="pago_cot" class="form-control"
+                    placeholder="Tarjeta(debito-credito) - Efectivo - Transferencia" />
+                    <span class="text-center text-danger"
+                    *ngIf="form.get('pago_cot').status != 'VALID' && form.get('pago_cot').touched">Campo
+                    obligatorio</span>
+                  </div>
+              </div>
+            </div>
+
+
+            <div class="row justify-content-center mt-2">
+              <div class="form-group text-center">
+                <!--EMAIL-->
+                <h4>Ingrese su Email</h4>
+                <input id="email_cot" type="text" formControlName="email_cot" class="form-control"
+                placeholder="ejemplo@example.com"/>
+                
+                
+                <span class="text-center text-danger"
+                *ngIf="form.get('email_cot').status != 'VALID' && form.get('email_cot').touched">Campo
+                obligatorio</span>
+              </div>
+
+            </div>
+
+            <div class="row justify-content-center mt-2">
+                 <!--BOTON COTIZACION -->
+                 
+                  <button type="submit" class="btn btn-primary btn-block w-50" >
+                      ENVIAR
+                      <!--Aca mando al subbmit de arriba que lo tengo que configurar-->
+                  </button>
+              
+              
+            </div>
+        
+        </form>

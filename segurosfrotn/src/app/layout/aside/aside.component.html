@@ -1,0 +1,29 @@
+<div class="sidebar  float-left">
+
+  <div class="sidebar-sticky bg-primary h-100 d-inline-block" >
+    <div class="form-group text-white text-center mt-3" *ngIf="sidebarToggled">
+      <h5>USUARIO </h5>
+      <p>{{user.usuario}}</p>
+    
+    </div>
+    <hr class="bg-light">
+    <ul class="nav flex-column d-flexd">
+      <li class="nav-item" *ngFor="let r of routes">
+        <a class="nav-link text-secondary" routerLink="{{r.link}}">
+          <i class="far fa-hand-point-right"></i>{{r.detail}}
+        </a>
+      </li>
+      <li class="nav-item border-top mt-3 text-secondary">
+        <button type="button" class="btn btn-block" (click)="logout()"> 
+          <i class="fas fa-power-off text-danger"></i>
+          
+        </button>
+        <a class="nav-item nav-link text-white text-center" style="cursor: pointer;" routerLink='/home'>HOME</a>
+      </li>
+      <li class="nav-item border-top mt-3">
+        
+      </li>
+    </ul>
+  </div>
+</div>
+
